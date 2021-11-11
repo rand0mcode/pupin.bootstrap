@@ -3,16 +3,8 @@ plan bootstrap::puppetca_03 (
   TargetSpec $targets = 'puppetca',
 ){
   out::message('### initialize PuppetCA - Part 3')
-
   # Disable autosign on puppetca
-  run_task('puppet_conf', 'puppetca',
-    {
-      action  => 'set',
-      section => 'server',
-      setting => 'autosign',
-      value   => 'false',
-    }
-  )
-
+  run_task('puppet_conf', 'puppetca', { action => 'set', section => 'server', setting => 'autosign', value => 'false' })
+  # restart puppetsever service
   run_task('service', $targets, { action => 'restart', name => 'puppetserver' })
 }

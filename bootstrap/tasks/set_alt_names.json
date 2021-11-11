@@ -1,0 +1,10 @@
+{
+  "description": "Allows or disallows the use of dns alt names.",
+  "input_method": "stdin",
+  "parameters": {
+    "alt_names": {
+      "description": "Toggle so allow or disallow alt names.",
+      "type": "Boolean"
+    }
+  }
+}

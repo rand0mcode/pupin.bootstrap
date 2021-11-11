@@ -1,0 +1,10 @@
+{
+  "description": "Create the initial r10k config.",
+  "input_method": "stdin",
+  "parameters": {
+    "control_repo": {
+      "description": "Git url for the remote control repository",
+      "type": "String[1]"
+    }
+  }
+}

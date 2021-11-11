@@ -1,0 +1,10 @@
+{
+  "description": "Allows you to set csr_attributes pp_role",
+  "input_method": "environment",
+  "parameters": {
+    "role": {
+      "description": "puppet role for csr_attributes pp_role.",
+      "type": "String[1]"
+    }
+  }
+}

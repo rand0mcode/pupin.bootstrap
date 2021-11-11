@@ -1,0 +1,5 @@
+{
+  "description": "Disables the ca in a puppetserver",
+  "input_method": "environment",
+  "parameters": { }
+}
