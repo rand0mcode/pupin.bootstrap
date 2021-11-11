@@ -2,6 +2,8 @@
 plan bootstrap::puppetserver_02 (
   TargetSpec $targets = 'puppetserver',
 ){
+  out::message('### initialize Puppetserver - Part 2')
+
   # does not work, provider is not excepted in the right way
   # run_task('package', $targets, { 'action' => 'install', 'name' => 'r10k', 'provider' => 'puppet_gem' })
 

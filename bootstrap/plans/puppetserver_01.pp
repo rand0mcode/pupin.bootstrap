@@ -3,6 +3,8 @@ plan bootstrap::puppetserver_01 (
   TargetSpec $targets = 'puppetserver',
   String $domain,
 ){
+  out::message('### initialize Puppetserver - Part 1')
+
   run_task('package', $targets, { action => 'install', name => 'puppetserver' })
 
   $ca = [

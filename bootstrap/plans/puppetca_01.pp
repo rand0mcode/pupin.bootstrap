@@ -3,6 +3,8 @@ plan bootstrap::puppetca_01 (
   TargetSpec $targets = 'puppetca',
   String $domain,
 ){
+  out::message('### initialize PuppetCA - Part 1')
+
   run_task('package', $targets, { action => 'install', name => 'puppetserver' })
 
   # allow allow-subject-alt-name for the setup, will be disabled later

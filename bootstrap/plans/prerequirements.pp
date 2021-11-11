@@ -5,6 +5,8 @@ plan bootstrap::prerequirements (
   Boolean $set_hostname = false,
   String $locale      = 'de',
 ){
+  out::message('### perpare environment, installing puppet-agent')
+
   # install puppet agent
   run_task('puppet_agent::install', $targets, { collection => $collection })
 

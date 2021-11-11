@@ -3,6 +3,8 @@ plan bootstrap::puppetca_02 (
   TargetSpec $targets = 'puppetca',
   String $domain,
 ){
+  out::message('### initialize PuppetCA - Part 2')
+
   # disable allow-subject-alt-name again
   apply($targets) {
     $ca_conf = [

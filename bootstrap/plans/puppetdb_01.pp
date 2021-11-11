@@ -3,6 +3,8 @@ plan bootstrap::puppetdb_01 (
   TargetSpec $targets = 'puppetdb',
   String $domain,
 ){
+  out::message('### initialize PuppetDB')
+
   # disable centos postgres stream to use postgres upstream repositoeries
   run_command('dnf module disable -y -q postgresql', $targets)
   run_command('dnf clean all', $targets)

@@ -2,6 +2,8 @@
 plan bootstrap::puppetca_03 (
   TargetSpec $targets = 'puppetca',
 ){
+  out::message('### initialize PuppetCA - Part 3')
+
   # Disable autosign on puppetca
   run_task('puppet_conf', 'puppetca',
     {
