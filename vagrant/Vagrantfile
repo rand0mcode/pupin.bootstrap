@@ -1,0 +1,36 @@
+# -*- mode: ruby -*-
+# vi: set ft=ruby :
+
+### Config Area
+
+box_image = 'generic/centos8'
+
+vms = [
+  { name: 'puppet.example.com',   memory: 4096, vcpu: 2, ip: '10.0.0.2', image: box_image },
+  { name: 'puppetca.example.com', memory: 2048, vcpu: 2, ip: '10.0.0.3', image: box_image },
+  { name: 'puppetdb.example.com', memory: 2048, vcpu: 2, ip: '10.0.0.4', image: box_image }
+]
+
+### Code Area
+
+Vagrant.configure("2") do |config|
+  if Vagrant.has_plugin?('vagrant-hostmanager')
+    config.hostmanager.enabled           = true
+    config.hostmanager.manage_host       = true
+    config.hostmanager.manage_guest      = true
+    config.hostmanager.ignore_private_ip = false
+    config.hostmanager.include_offline   = true
+  end
+
+  vms.each do |vm|
+    config.vm.define vm[:name] do |node|
+      node.vm.box = vm[:image]
+      node.vm.hostname = vm[:name]
+      node.vm.network "private_network", ip: vm[:ip]
+      node.vm.provider "virtualbox" do |vb|
+          vb.customize ["modifyvm", :id, "--memory", vm[:memory]]
+          vb.customize ['modifyvm', :id, '--cpus', '2']
+      end
+    end
+  end
+end

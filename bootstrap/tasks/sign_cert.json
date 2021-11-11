@@ -1,0 +1,10 @@
+{
+  "description": "Allows you to sign a cert on a PuppetCA",
+  "input_method": "environment",
+  "parameters": {
+    "certname": {
+      "description": "Certname to sign (mostly a agent fqdn)",
+      "type": "Optional[String[1]]"
+    }
+  }
+}
