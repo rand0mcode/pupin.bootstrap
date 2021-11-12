@@ -7,12 +7,13 @@ require 'fileutils'
 params       = JSON.parse(STDIN.read)
 control_repo = params['control_repo']
 file_path    = '/etc/puppetlabs/r10k/r10k.yaml'
+cache_dir    = '/opt/puppetlabs/puppet/cache/r10k'
 
 FileUtils.mkdir_p '/etc/puppetlabs/r10k'
-FileUtils.mkdir_p '/var/cache/r10k'
+FileUtils.mkdir_p cache_dir
 
 r10k_config = {
-  cachedir: '/var/cache/r10k',
+  cachedir: cache_dir,
   sources: {
     puppet: {
       remote: control_repo,
