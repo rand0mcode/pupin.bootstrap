@@ -1,0 +1,11 @@
+{
+  "description": "Runs a r10k puppetfile deployment. Optional with an environment.",
+  "input_method": "environment",
+  "parameters": {
+    "puppet_env": {
+      "description": "Set environment to update.",
+      "type": "String[1]",
+      "default": "false"
+    }
+  }
+}
