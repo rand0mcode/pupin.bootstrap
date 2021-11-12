@@ -1,8 +1,8 @@
 # This plan is a part of bootstrap::all and represents the steps which are pre required to run
 plan bootstrap::prerequirements (
   TargetSpec $targets,
-  String $collection    = 'puppet7',
-  String $locale        = 'de',
+  String $collection,
+  String $locale,
 ){
   out::message('### perpare environment, installing puppet-agent')
   # install puppet agent
