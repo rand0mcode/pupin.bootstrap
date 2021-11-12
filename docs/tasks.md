@@ -55,7 +55,7 @@ bolt task run bootstrap::create_csr_attributes --targets puppetca role="puppet::
 This task creates an initial r10k configuration. Parameter is the url of a control repo.
 
 ```
-bolt task run bootstrap::create_r10k_config --targets puppet control_repo="https://git.example.com/control.git"
+bolt task run bootstrap::r10k_config --targets puppet control_repo="https://git.example.com/control.git"
 ```
 
 ### Disable CA

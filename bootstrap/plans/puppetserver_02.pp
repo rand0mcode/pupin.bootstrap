@@ -10,7 +10,7 @@ plan bootstrap::puppetserver_02 (
   # install git for r10k
   run_task('package', $targets, { action => 'install', name => 'git' })
   # configure r10k and control-repo
-  run_task('bootstrap::create_r10k_config', $targets, { control_repo => $control_repo })
+  run_task('bootstrap::r10k_config', $targets, { control_repo => $control_repo })
   # deploy puppetfile
-  run_command('/opt/puppetlabs/puppet/bin/r10k deploy environment -p', $targets)
+  run_task('bootstrap::r10k_deploy', $targets)
 }
