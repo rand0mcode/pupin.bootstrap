@@ -1,10 +1,10 @@
 # To read more about inventory files, see https://pup.pt/bolt-inventory
 
 groups:
-  - name: puppet
+  - name: all_hosts
     targets:
       - uri: puppet.pub.example42.cloud
-        name: puppetserver
+        name: puppet
 
       - uri: puppetdb.pub.example42.cloud
         name: puppetdb

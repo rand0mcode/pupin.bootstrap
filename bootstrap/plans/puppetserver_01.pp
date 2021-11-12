@@ -10,15 +10,9 @@ plan bootstrap::puppetserver_01 (
   run_task('package', $targets, { action => 'install', name => 'puppetserver' })
 
   # set server to ca for first run to get certificates
-  $puppet_conf = {
-    certname => "puppet.${domain}", server => "puppetca.${domain}",
-    ca_server => "puppetca.${domain}", dns_alt_names => "puppet.${domain}, puppet"
-  }
-
-  $puppet_conf.each |$setting, $value| {
-    run_task('puppet_conf', $targets, { action => 'set', section => 'agent', setting => $setting, value => $value })
-  }
-
+  run_task('puppet_conf', $targets, { action => 'set', section => 'agent', setting => 'server', value => "puppetca.${domain}" })
+  # set dns altname
+  run_task('puppet_conf', $targets, { action => 'set', section => 'agent', setting => 'dns_alt_names', value => "puppet.${domain}" })
   # disable ca on server, we use an external ca
   run_task('bootstrap::disable_ca', $targets)
   # run puppet to get certificates
