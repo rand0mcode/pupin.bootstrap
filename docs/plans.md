@@ -6,12 +6,34 @@ bolt plan show
 
 ## Install all components with a plan
 
-### default run
-
-All in one installation of puppetserver, ca and a db
+### bootstrap::all - All in one installation
 
 ```
-bolt plan run bootstrap::all
+bootstrap::all
+  This plan installs a puppetserver, puppetca and puppetdb
+
+Usage
+  bolt plan run bootstrap::all [collection=<value>] [control_repo=<value>]
+  [domain=<value>] [locale=<value>] [prerequirements=<value>] [targets=<value>]
+
+Parameters
+  collection  String
+    Default: 'puppet7'
+
+  control_repo  String
+    Default: 'https://github.com/rand0mcode/pupin.control.git'
+
+  domain  String
+    Default: 'priv.example42.cloud'
+
+  locale  String
+    Default: 'de'
+
+  prerequirements  Boolean
+    Default: true
+
+  targets  TargetSpec
+    Default: ['puppet', 'puppetdb', 'puppetca', 'agent01']
 ```
 
 ### with another domain
