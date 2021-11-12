@@ -1,13 +1,20 @@
 # Hetzner and Terraform
 
+Use a specific inventory.
+
 ```
 bolt --inventoryfile inventory-tf-hzn.yaml
 ```
 
+Show all nodes from an inventory
+
 ```
+bolt inventory show
 bolt --inventoryfile inventory-tf-hzn.yaml inventory show
 ```
 
+Link specific inventory to standard inventory file.
+
 ```
-bolt --inventoryfile inventory-tf-hzn.yaml plan run bootstrap::all
+ln -s inventory-tf-hzn.yaml inventory.yaml
 ```
