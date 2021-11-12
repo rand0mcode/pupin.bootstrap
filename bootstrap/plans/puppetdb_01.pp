@@ -14,4 +14,7 @@ plan bootstrap::puppetdb_01 (
   # run puppet on puppetserver to use the puppetdb
   run_task('puppet_conf', 'puppet', { action => 'set', section => 'agent', setting => 'environment', value => 'bootstrap' })
   run_plan('puppet_agent::run', 'puppet')
+  # switch back to standard environment
+  run_task('puppet_conf', $targets, { action => 'set', section => 'agent', setting => 'environment', value => 'production' })
+  run_task('puppet_conf', 'puppet', { action => 'set', section => 'agent', setting => 'environment', value => 'production' })
 }

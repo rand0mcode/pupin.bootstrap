@@ -16,6 +16,7 @@ plan bootstrap::prerequirements (
       certname    => "${target}.${domain}",
       server      => "puppet.${domain}",
       ca_server   => "puppetca.${domain}",
+      environment => 'production',
     }
 
     $puppet_conf.each |$setting, $value| {
