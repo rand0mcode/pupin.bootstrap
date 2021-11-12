@@ -1,7 +1,7 @@
 # This plan is a part of bootstrap::all and represents the first steps for the puppetserver
 plan bootstrap::puppetserver_01 (
   String $domain,
-  TargetSpec $targets = 'puppetserver',
+  TargetSpec $targets,
 ){
   out::message('### initialize Puppetserver - Part 1')
   # create csr attributes and set role

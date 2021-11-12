@@ -1,7 +1,7 @@
 # This plan is a part of bootstrap::all and represents the second steps for the puppetca
 plan bootstrap::puppetca_02 (
   String $domain,
-  TargetSpec $targets = 'puppetca',
+  TargetSpec $targets,
 ){
   out::message('### initialize PuppetCA - Part 2')
   # disable allow-subject-alt-name again

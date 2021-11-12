@@ -1,7 +1,7 @@
 # This plan is a part of bootstrap::all and represents the second steps for the puppetserver
 plan bootstrap::puppetserver_02 (
   String $control_repo,
-  TargetSpec $targets  = 'puppetserver',
+  TargetSpec $targets,
 ){
   out::message('### initialize Puppetserver - Part 2')
   # does not work, provider is not excepted in the right way

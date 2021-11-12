@@ -1,7 +1,7 @@
 # This plan is a part of bootstrap::all and represents the first steps for the puppetca
 plan bootstrap::puppetca_01 (
   String $domain,
-  TargetSpec $targets = 'puppetca',
+  TargetSpec $targets,
 ){
   out::message('### initialize PuppetCA - Part 1')
   # install puppetserver package

@@ -1,7 +1,7 @@
 # This plan is a part of bootstrap::all and represents the steps for the puppetdb
 plan bootstrap::puppetdb_01 (
   String $domain,
-  TargetSpec $targets = 'puppetdb',
+  TargetSpec $targets,
 ){
   out::message('### initialize PuppetDB')
   run_task('bootstrap::create_csr_attributes', $targets, { role => 'puppet::db'})
