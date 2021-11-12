@@ -4,7 +4,7 @@ plan bootstrap::all (
   String $collection       = 'puppet7',
   Boolean $prerequirements = true,
   String $domain           = 'priv.example42.cloud',
-  String $control_repo     = 'https://github.com/rwaffen/pupin-control.git',
+  String $control_repo     = 'https://github.com/rand0mcode/pupin.control.git',
 ){
   if $prerequirements {
     run_plan('bootstrap::prerequirements', $targets, { collection => $collection })
