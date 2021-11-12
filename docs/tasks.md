@@ -37,6 +37,30 @@ This task creates the crs_attributes.yaml and adds the pp_role filed to it.
 bolt task run bootstrap::create_csr_attributes --targets puppetca role="puppet::ca"
 ```
 
+## Create r10k Configuration
+
+This task creates an initial r10k configuration. Parameter is the url of a control repo.
+
+```
+bolt task run bootstrap::create_r10k_config --targets puppet control_repo="https://git.example.com/control.git"
+```
+
+## Disable CA
+
+This task disables the CA on a puppet compiler. It overwrites the services.d/ca.cfg.
+
+```
+bolt task run bootstrap::disable_ca --targets puppet
+```
+
+## Set alt_names
+
+This task allows or disallows the usage of dns_alt_names on a PuppetCA.
+
+```
+bolt task run bootstrap::set_alt_names --targets puppetca alt_names="true"
+```
+
 ## Tear down
 
 This is a bolt standard task, which uses the terraform manifests from `../terraform` directory.
