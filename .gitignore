@@ -1,6 +1,6 @@
 .terraform/
 .terraform.lock.hcl
-*.auto.tfvars
+secrets.auto.tfvars
 *.tfstate
 *.tfstate.backup
 .rerun.json

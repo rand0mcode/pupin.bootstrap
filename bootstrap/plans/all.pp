@@ -5,7 +5,7 @@ plan bootstrap::all (
   String $control_repo     = 'https://github.com/rand0mcode/pupin.control.git',
   String $domain           = 'priv.example42.cloud',
   String $locale           = 'de',
-  TargetSpec $targets      = ['puppet', 'puppetdb', 'puppetca', 'agent01'],
+  TargetSpec $targets      = ['puppet', 'puppetdb', 'puppetca'],
 ){
   if $prerequirements {
     run_plan(

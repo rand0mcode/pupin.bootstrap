@@ -15,6 +15,12 @@ groups:
       - uri: agent01.pub.example42.cloud
         name: agent01
 
+      - uri: monitor01.pub.example42.cloud
+        name: monitor01
+
+      - uri: monitor02.pub.example42.cloud
+        name: monitor02
+
 config:
   transport: ssh
   ssh:
