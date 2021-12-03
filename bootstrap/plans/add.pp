@@ -7,5 +7,5 @@ plan bootstrap::add (
   TargetSpec $targets      = [],
 ){
   run_plan('bootstrap::prerequirements', $targets, { collection => $collection, locale => $locale, domain => $domain })
-  run_task('bootstrap::create_csr_attributes', $targets, { role => 'default'})
+  run_task('bootstrap::create_csr_attributes', $targets, { role => $role })
 }
