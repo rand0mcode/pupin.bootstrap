@@ -3,7 +3,7 @@ plan bootstrap::puppetserver_01 (
   String $domain,
   TargetSpec $targets,
 ){
-  out::message('### initialize Puppetserver - Part 1')
+  out::message('### initialize Puppetserver - Part 1/2')
   # create csr attributes and set role
   run_task('bootstrap::create_csr_attributes', $targets, { role => 'puppet::compiler'})
   # install puppetserver package

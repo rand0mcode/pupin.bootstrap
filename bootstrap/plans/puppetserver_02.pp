@@ -3,7 +3,7 @@ plan bootstrap::puppetserver_02 (
   String $control_repo,
   TargetSpec $targets,
 ){
-  out::message('### initialize Puppetserver - Part 2')
+  out::message('### initialize Puppetserver - Part 2/2')
   # does not work, provider is not excepted in the right way
   # run_task('package', $targets, { 'action' => 'install', 'name' => 'r10k', 'provider' => 'puppet_gem' })
   run_command('puppet resource package r10k ensure=installed provider=puppet_gem', $targets)
