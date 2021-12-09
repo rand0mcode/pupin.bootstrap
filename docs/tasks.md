@@ -8,22 +8,6 @@ bolt task show
 
 ## Default Tasks
 
-### Terraform rampup
-
-This is a bolt standard task, which uses the terraform manifests from `../terraform` directory.
-
-```
-bolt task run terraform::apply -t localhost dir="../terraform"
-```
-
-## Terraform tear down
-
-This is a bolt standard task, which uses the terraform manifests from `../terraform` directory.
-
-```
-bolt task run terraform::destroy -t localhost dir="../terraform"
-```
-
 ### Install Puppet Agent (latest)
 
 This is a bolt standard task

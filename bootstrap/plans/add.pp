@@ -8,4 +8,10 @@ plan bootstrap::add (
 ){
   run_plan('bootstrap::prerequirements', $targets, { collection => $collection, locale => $locale, domain => $domain })
   run_task('bootstrap::create_csr_attributes', $targets, { role => $role })
+
+  # background() || {
+  #   run_task('superlong::task', $targets)
+  # }
+  # wait(10)
+  # run_command("echo 'Continue immediately'", $targets)
 }
