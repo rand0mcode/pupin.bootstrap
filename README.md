@@ -22,11 +22,11 @@ So basicly DNS should be available ;)
 
 ### Hetzner Cloud
 
-see pupin.setup
+see [pupin.setup](https://github.com/rand0mcode/pupin.setup)
 
 ### WIP: Vagrant
 
-see pupin.setup
+see [pupin.setup](https://github.com/rand0mcode/pupin.setup)
 
 ### Use pupin.bootstrap
 
