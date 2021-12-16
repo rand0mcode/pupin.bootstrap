@@ -8,10 +8,7 @@ plan bootstrap::add (
 ){
   run_plan('bootstrap::prerequirements', $targets, { collection => $collection, locale => $locale, domain => $domain })
   run_task('bootstrap::create_csr_attributes', $targets, { role => $role })
-
-  # background() || {
-  #   run_task('superlong::task', $targets)
-  # }
-  # wait(10)
-  # run_command("echo 'Continue immediately'", $targets)
+  run_plan('puppet_agent::run', $targets) # Generate cert and send to CA
+  get_targets($targets).each |$target| { run_task('bootstrap::sign_cert', 'puppetca', { certname => "${target.name}.${domain}" }) }
+  run_plan('puppet_agent::run', $targets) # Download cert and apply cataloge
 }
