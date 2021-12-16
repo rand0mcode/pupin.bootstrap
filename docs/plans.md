@@ -73,15 +73,3 @@ Parameters
   targets  TargetSpec
     Default: []
 ```
-
-```
-# on control node
-bolt plan run bootstrap::add -t monitor01,monitor02
-
-# on node
-ssh node
-puppet agent -t --waitforcert 10
-
-# on control node
-bolt task run bootstrap::sign_cert --targets puppetca certname=monitor02.priv.example42.cloud
-```
