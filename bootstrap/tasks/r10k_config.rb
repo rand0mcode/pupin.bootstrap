@@ -18,6 +18,8 @@ r10k_config = {
     puppet: {
       remote: control_repo,
       basedir: '/etc/puppetlabs/code/environments'
+      deploy:
+        generate_types: true
     }
   }
 }.to_yaml
