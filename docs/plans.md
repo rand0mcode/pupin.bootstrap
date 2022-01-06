@@ -24,7 +24,7 @@ Parameters
     Default: 'https://github.com/rand0mcode/pupin.control.git'
 
   domain  String
-    Default: 'priv.example42.cloud'
+    Default: 'priv.rw.betadots.training'
 
   locale  String
     Default: 'de'
@@ -38,7 +38,7 @@ Parameters
 
 #### with another domain
 
-default is `priv.example42.com`.
+default is `priv.rw.betadots.training`.
 
 The targets in the plans will than be extended with this domain. Like `puppet.foobar.com` or `puppetdb.foorbar.com`. And dont forget to update the inventory file,
 there is currently no way to get a dynamic domain.
@@ -62,7 +62,7 @@ Parameters
     Default: 'puppet7'
 
   domain  String
-    Default: 'priv.example42.cloud'
+    Default: 'priv.rw.betadots.training'
 
   locale  String
     Default: 'de'

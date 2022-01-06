@@ -1,7 +1,7 @@
 # This plan add nodes to the puppet environment
 plan bootstrap::add (
   String $collection       = 'puppet7',
-  String $domain           = 'priv.example42.cloud',
+  String $domain           = 'priv.rw.betadots.training',
   String $locale           = 'de',
   String $role             = 'default',
   TargetSpec $targets      = [],

@@ -3,7 +3,7 @@ plan bootstrap::all (
   Boolean $prerequirements = true,
   String $collection       = 'puppet7',
   String $control_repo     = 'https://github.com/rand0mcode/pupin.control.git',
-  String $domain           = 'priv.example42.cloud',
+  String $domain           = 'priv.rw.betadots.training',
   String $locale           = 'de',
   TargetSpec $targets      = ['puppet', 'puppetdb', 'puppetca'],
 ){

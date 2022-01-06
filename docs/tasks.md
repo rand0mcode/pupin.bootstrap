@@ -23,7 +23,7 @@ bolt task run puppet_agent::install --targets puppet
 This is a custom task to sign a cert request on a PuppetCA
 
 ```
-bolt task run bootstrap::sign_cert --targets puppetca certname=agent01.priv.example42.cloud
+bolt task run bootstrap::sign_cert --targets puppetca certname=agent01.priv.rw.betadots.training
 ```
 
 ### Create CSR Attributes
