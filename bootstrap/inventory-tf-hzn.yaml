@@ -12,14 +12,17 @@ groups:
       - uri: puppetca.pub.rw.betadots.training
         name: puppetca
 
-      - uri: agent01.pub.rw.betadots.training
-        name: agent01
+      - uri: kibana.pub.rw.betadots.training
+        name: kibana
 
-      - uri: monitor01.pub.rw.betadots.training
-        name: monitor01
+      - uri: elastic01.pub.rw.betadots.training
+        name: elastic01
 
-      - uri: monitor02.pub.rw.betadots.training
-        name: monitor02
+      - uri: elastic02.pub.rw.betadots.training
+        name: elastic02
+
+      - uri: elastic03.pub.rw.betadots.training
+        name: elastic03
 
 config:
   transport: ssh
