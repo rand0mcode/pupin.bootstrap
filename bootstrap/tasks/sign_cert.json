@@ -3,7 +3,7 @@
   "input_method": "environment",
   "parameters": {
     "certname": {
-      "description": "Certname to sign (mostly a agent fqdn)",
+      "description": "Certname to sign (mostly an agent fqdn)",
       "type": "String[1]"
     }
   }

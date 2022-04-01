@@ -6,5 +6,4 @@ if [ ${PT_puppet_env} == "false" ]; then
 else
   echo "Deploying environment: ${PT_puppet_env}"
   /opt/puppetlabs/puppet/bin/r10k deploy environment -v -m $PT_puppet_env
-  # /opt/puppetlabs/puppet/bin/puppet generate types --environment $PT_puppet_env
 fi
