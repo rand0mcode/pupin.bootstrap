@@ -53,6 +53,25 @@ cd bootstrap
 bolt plan run bootstrap::add -t kibana role="monitoring::kibana"
 ```
 
+#### clean cert
+
+```
+cd bootstrap
+bolt task run bootstrap::clean_cert --targets puppetca certname=kibana.priv.rw.betadots.training
+```
+
+#### r10k deployment
+
+```
+cd bootstrap
+
+bootstrap git:(main) bolt task run bootstrap::r10k_deploy --targets puppet
+
+# only deploy one environment
+
+bolt task run bootstrap::r10k_deploy --targets puppet puppet_env=development
+```
+
 # Docs
 
 - [The Docs](docs)

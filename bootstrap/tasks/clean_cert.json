@@ -1,0 +1,10 @@
+{
+  "description": "Allows you to clean a cert on a PuppetCA",
+  "input_method": "environment",
+  "parameters": {
+    "certname": {
+      "description": "Certname to clean (mostly an agent fqdn)",
+      "type": "String[1]"
+    }
+  }
+}
