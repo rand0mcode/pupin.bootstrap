@@ -30,6 +30,8 @@ see [pupin.setup](https://github.com/rand0mcode/pupin.setup)
 
 ### Use pupin.bootstrap
 
+#### all
+
 If you already got VMs or can create them yourself you can skip hetzner or vagrant setup.
 Go to the `bootstrap` directory:
 
@@ -39,6 +41,16 @@ cd bootstrap
 # update inventory.yaml
 
 bolt plan run bootstrap::all dommain="your.domain.tld"
+```
+
+#### add
+
+```
+cd bootstrap
+
+# update inventory.yaml
+
+bolt plan run bootstrap::add -t kibana role="monitoring::kibana"
 ```
 
 # Docs
