@@ -14,6 +14,10 @@ plan bootstrap::prerequirements (
   run_task('package', $targets, { action => 'install', name => "glibc-langpack-${locale}" })
 
   get_targets($targets).each |$target| {
+
+    apply($target) { host { "${target}.${domain}": ensure => absent } } # remove ipv4 host alias
+    apply($target) { host { "${target}.${domain}": ensure => absent } } # remove ipv6 host alias
+
     $puppet_conf = {
       certname    => "${target}.${domain}",
       server      => "puppet.${domain}",
