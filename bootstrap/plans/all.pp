@@ -5,18 +5,25 @@ plan bootstrap::all (
   String $control_repo     = 'https://github.com/rand0mcode/pupin.control.git',
   String $domain           = 'priv.rw.betadots.training',
   String $locale           = 'de',
+  String $type             = 'ext_ca_pdb_oss',
   TargetSpec $targets      = ['puppet', 'puppetdb', 'puppetca'],
 ){
   if $prerequirements {
-    run_plan(
-      'bootstrap::prerequirements', $targets,
-      { collection => $collection, locale => $locale, domain => $domain })
+    run_plan('bootstrap::prerequirements', $targets, { collection => $collection, locale => $locale, domain => $domain })
   }
 
-  run_plan('bootstrap::puppetca_01',     'puppetca', { domain => $domain })
-  run_plan('bootstrap::puppetserver_01', 'puppet',   { domain => $domain })
-  run_plan('bootstrap::puppetca_02',     'puppetca', { domain => $domain })
-  run_plan('bootstrap::puppetserver_02', 'puppet',   { control_repo => $control_repo })
-  run_plan('bootstrap::puppetdb_01',     'puppetdb', { domain => $domain })
-  run_plan('bootstrap::puppetca_03',     'puppetca')
+  case $type {
+    'ext_ca_pdb_oss': {
+      run_plan('bootstrap::puppetca_01',     'puppetca', { domain => $domain })
+      run_plan('bootstrap::puppetserver_01', 'puppet',   { domain => $domain })
+      run_plan('bootstrap::puppetca_02',     'puppetca', { domain => $domain })
+      run_plan('bootstrap::puppetserver_02', 'puppet',   { control_repo => $control_repo })
+      run_plan('bootstrap::puppetdb_01',     'puppetdb', { domain => $domain })
+      run_plan('bootstrap::puppetca_03',     'puppetca')
+    }
+    'aio_oss': {
+      run_plan('bootstrap::puppetserver_aio', 'puppet',   { control_repo => $control_repo })
+    }
+    default: { }
+  }
 }
