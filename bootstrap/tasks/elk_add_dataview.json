@@ -1,0 +1,21 @@
+{
+  "description": "Adds an elastic dataview to kibana. Formerly known as index_pattern",
+  "input_method": "stdin",
+  "parameters": {
+    "pattern": {
+      "description": "The Index/Data View pattern",
+      "type": "String[1]",
+      "default": "filebeat-*"
+    },
+    "kibana_host": {
+      "description": "The Kibana API host",
+      "type": "String[1]",
+      "default": "localhost"
+    },
+    "kibana_port": {
+      "description": "The Kibana API port",
+      "type": "Integer",
+      "default": 5601
+    }
+  }
+}

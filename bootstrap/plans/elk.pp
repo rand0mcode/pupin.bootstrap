@@ -25,4 +25,8 @@ plan bootstrap::elk (
   # bootstrap second and third node to join the cluster
   run_plan('puppet_agent::run', 'elastic02, elastic03')
   run_plan('puppet_agent::run', 'kibana')
+
+  # add index_pattern/dataview to be able
+  # to use the discover tab of kibana right away
+  run_task('bootstrap::elk_add_dataview', 'kibana', { pattern => 'filebeat-*' })
 }
