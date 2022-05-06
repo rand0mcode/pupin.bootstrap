@@ -1,0 +1,5 @@
+{
+  "description": "Import Metricbeat default dashboards into Kibana",
+  "input_method": "environment",
+  "parameters": { }
+}
