@@ -65,3 +65,26 @@ This tasks triggers r10k with or without an environment and updates the modules.
 ```
 bolt taks run bootstrap::r10k_deploy --targets puppet puppet_env="empty"
 ```
+
+### Add dataview/index_pattern to kibana
+
+Adds an index_pattern to kibana to scan an index or a dataview for all its fields.
+
+```
+bolt task run bootstrap::elk_add_datavie --targets kibana pattern="mypattern-*"
+```
+
+
+### Import Ingest Pipeline for puppetserver.log
+
+Imports a ingest pipeline into elasticsearch with special GROK pattern for puppets puppetserver.log.
+
+```
+bolt task run bootstrap::elk_add_ingest_pipeline_puppetserver_log --targets elastic01
+```
+
+### Import Metricbeat default dashboards into Kibana
+
+```
+bolt task run bootstrap::elk_add_metricbeat_dashboards --targets kibana
+```

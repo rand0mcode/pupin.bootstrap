@@ -83,3 +83,24 @@ Parameters
   targets  TargetSpec
     Default: []
 ```
+
+### bootstrap::elk - Install a 3 node elasticsearch cluster with kibana
+
+```
+bootstrap::elk
+  This plan will bootstrap an elk stack. It needs a working puppet environment for this.
+
+Usage
+  bolt plan run bootstrap::elk [add_nodes=<value>] [domain=<value>]
+  [targets=<value>]
+
+Parameters
+  add_nodes  Boolean
+    Default: true
+
+  domain  String
+    Default: 'priv.rw.betadots.training'
+
+  targets  TargetSpec
+    Default: ['elastic01', 'elastic02', 'elastic03', 'kibana']
+```

@@ -45,6 +45,8 @@ bolt plan run bootstrap::all dommain="your.domain.tld"
 
 #### all aio
 
+if you only have a puppetserver, which is also the ca and runs the puppetdb, too, choose this parameters.
+
 ```
 bolt plan run bootstrap::all type="aio_oss" targets="puppet"
 ```
@@ -64,6 +66,18 @@ cd bootstrap
 # update inventory.yaml
 
 bolt plan run bootstrap::add -t kibana role="monitoring::kibana"
+```
+
+#### elk
+
+after installing the puppet stack you can also install the elk stack with the following plan
+
+```
+cd bootstrap
+
+# update inventory.yaml
+
+bolt plan run bootstrap::elk
 ```
 
 #### clean cert
