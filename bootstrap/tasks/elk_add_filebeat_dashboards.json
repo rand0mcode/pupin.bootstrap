@@ -1,0 +1,5 @@
+{
+  "description": "Import Filebeat default dashboards into Kibana",
+  "input_method": "environment",
+  "parameters": { }
+}

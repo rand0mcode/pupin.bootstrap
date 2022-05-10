@@ -54,4 +54,6 @@ plan bootstrap::prerequirements (
       run_task('puppet_conf', $target, { action  => 'set', section => 'agent', setting => $setting, value => $value })
     }
   }
+
+  # run_task('bootstrap::elk_disable_system_auditd', $targets)
 }

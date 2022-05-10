@@ -1,0 +1,5 @@
+{
+  "description": "Disables the systems auditd in favor of auditbeat.",
+  "input_method": "environment",
+  "parameters": { }
+}
