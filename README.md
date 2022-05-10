@@ -43,6 +43,19 @@ cd bootstrap
 bolt plan run bootstrap::all dommain="your.domain.tld"
 ```
 
+#### all aio
+
+```
+bolt plan run bootstrap::all type="aio_oss" targets="puppet"
+```
+
+#### all with different base environment
+
+```
+bolt plan run bootstrap::all env="development"
+```
+
+
 #### add
 
 ```

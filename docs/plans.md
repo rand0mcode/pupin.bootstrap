@@ -14,7 +14,8 @@ bootstrap::all
 
 Usage
   bolt plan run bootstrap::all [collection=<value>] [control_repo=<value>]
-  [domain=<value>] [locale=<value>] [prerequirements=<value>] [targets=<value>]
+  [domain=<value>] [env=<value>] [locale=<value>] [prerequirements=<value>]
+  [targets=<value>] [type=<value>]
 
 Parameters
   collection  String
@@ -26,6 +27,9 @@ Parameters
   domain  String
     Default: 'priv.rw.betadots.training'
 
+  env  String
+    Default: 'production'
+
   locale  String
     Default: 'de'
 
@@ -33,7 +37,10 @@ Parameters
     Default: true
 
   targets  TargetSpec
-    Default: ['puppet', 'puppetdb', 'puppetca', 'agent01']
+    Default: ['puppet', 'puppetdb', 'puppetca']
+
+  type  String
+    Default: 'ext_ca_pdb_oss'
 ```
 
 #### with another domain
@@ -54,7 +61,7 @@ bootstrap::add
   This plan add nodes to the puppet environment
 
 Usage
-  bolt plan run bootstrap::add [collection=<value>] [domain=<value>]
+  bolt plan run bootstrap::add [collection=<value>] [domain=<value>] [env=<value>]
   [locale=<value>] [role=<value>] [targets=<value>]
 
 Parameters
@@ -63,6 +70,9 @@ Parameters
 
   domain  String
     Default: 'priv.rw.betadots.training'
+
+  env  String
+    Default: 'production'
 
   locale  String
     Default: 'de'

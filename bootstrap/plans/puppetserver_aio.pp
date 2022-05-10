@@ -3,7 +3,7 @@ plan bootstrap::puppetserver_aio (
   String $control_repo,
   TargetSpec $targets,
 ){
-  out::message('### initialize Puppetserver')
+  out::message('### initialize aio Puppetserver')
 
   # install puppetserver package
   run_task('package', $targets, { action => 'install', name => 'puppetserver' })

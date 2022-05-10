@@ -6,10 +6,18 @@ plan bootstrap::all (
   String $domain           = 'priv.rw.betadots.training',
   String $locale           = 'de',
   String $type             = 'ext_ca_pdb_oss',
+  String $env              = 'production',
   TargetSpec $targets      = ['puppet', 'puppetdb', 'puppetca'],
 ){
   if $prerequirements {
-    run_plan('bootstrap::prerequirements', $targets, { collection => $collection, locale => $locale, domain => $domain })
+    run_plan('bootstrap::prerequirements', $targets,
+    {
+      collection => $collection,
+      domain     => $domain,
+      env        => $env,
+      locale     => $locale,
+      type       => $type,
+    })
   }
 
   case $type {
