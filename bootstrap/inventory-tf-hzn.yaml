@@ -3,6 +3,7 @@
 groups:
   - name: all_hosts
     targets:
+      ### Base Puppet Infra
       - uri: puppet.pub.rw.betadots.training
         name: puppet
 
@@ -12,6 +13,7 @@ groups:
       - uri: puppetca.pub.rw.betadots.training
         name: puppetca
 
+      ### ELK
       - uri: kibana.pub.rw.betadots.training
         name: kibana
 
@@ -23,6 +25,10 @@ groups:
 
       - uri: elastic03.pub.rw.betadots.training
         name: elastic03
+
+      ### Metrics
+      - uri: prometheus.pub.rw.betadots.training
+        name: prometheus
 
 config:
   transport: ssh
