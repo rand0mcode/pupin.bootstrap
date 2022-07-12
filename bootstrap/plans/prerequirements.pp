@@ -15,6 +15,9 @@ plan bootstrap::prerequirements (
   # install locales to get working environment for yum and postgres
   run_task('package', $targets, { action => 'install', name => "glibc-langpack-${locale}" })
 
+  # install convenience tools
+  run_task('package', $targets, { action => 'install', name => 'vim' })
+
   # set yum to use only ipv4 to not get blocked bei elastic on ipv6
   # they give you sometimes a http 403 when you want to install a
   # package over ipv6
