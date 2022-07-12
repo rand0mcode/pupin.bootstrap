@@ -2,7 +2,7 @@
 plan bootstrap::puppetca_01 (
   String $domain,
   TargetSpec $targets,
-){
+) {
   out::message('### initialize PuppetCA - Part 1/3')
 
   # install puppetserver package
@@ -10,7 +10,7 @@ plan bootstrap::puppetca_01 (
   run_task('package', $targets, { action => 'install', name => 'jq' })
 
   # create csr attributes and set role
-  run_task('bootstrap::create_csr_attributes', $targets, { role => 'puppet::ca'})
+  run_task('bootstrap::create_csr_attributes', $targets, { role => 'puppet::ca' })
 
   # allow allow-subject-alt-name for the setup, will be disabled later
   run_task('bootstrap::set_alt_names', $targets, { alt_names => true })
@@ -22,5 +22,5 @@ plan bootstrap::puppetca_01 (
   run_task('puppet_conf', $targets, { action => 'set', section => 'server', setting => 'autosign', value => 'true' })
 
   # start puppetserver service
-  run_task('service', $targets, { action => 'start', name => 'puppetserver'})
+  run_task('service', $targets, { action => 'start', name => 'puppetserver' })
 }

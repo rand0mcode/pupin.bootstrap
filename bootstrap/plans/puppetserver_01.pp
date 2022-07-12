@@ -2,11 +2,11 @@
 plan bootstrap::puppetserver_01 (
   String $domain,
   TargetSpec $targets,
-){
+) {
   out::message('### initialize Puppetserver - Part 1/2')
 
   # create csr attributes and set role
-  run_task('bootstrap::create_csr_attributes', $targets, { role => 'puppet::compiler'})
+  run_task('bootstrap::create_csr_attributes', $targets, { role => 'puppet::compiler' })
 
   # install puppetserver package
   run_task('package', $targets, { action => 'install', name => 'puppetserver' })
@@ -27,5 +27,5 @@ plan bootstrap::puppetserver_01 (
   run_task('puppet_conf', $targets, { action => 'set', section => 'agent', setting => 'server', value => "puppet.${domain}" })
 
   # start puppetserver service
-  run_task('service', $targets, { action => 'start', name => 'puppetserver'})
+  run_task('service', $targets, { action => 'start', name => 'puppetserver' })
 }

@@ -6,7 +6,7 @@ plan bootstrap::prerequirements (
   String $locale,
   String $type,
   TargetSpec $targets,
-){
+) {
   out::message('### perpare environment, installing puppet-agent')
 
   # install puppet agent
@@ -47,7 +47,7 @@ plan bootstrap::prerequirements (
           environment => $env,
         }
       }
-      default: { fail("Type: \"${type}\" is not supported!")}
+      default: { fail("Type: \"${type}\" is not supported!") }
     }
 
     $puppet_conf.each |$setting, $value| {

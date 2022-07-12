@@ -2,9 +2,9 @@
 plan bootstrap::puppetdb_01 (
   String $domain,
   TargetSpec $targets,
-){
+) {
   out::message('### initialize PuppetDB')
-  run_task('bootstrap::create_csr_attributes', $targets, { role => 'puppet::db'})
+  run_task('bootstrap::create_csr_attributes', $targets, { role => 'puppet::db' })
 
   # disable centos postgres stream to use postgres upstream repositoeries
   run_command('dnf module disable -y -q postgresql', $targets)

@@ -2,7 +2,7 @@
 plan bootstrap::puppetserver_02 (
   String $control_repo,
   TargetSpec $targets,
-){
+) {
   out::message('### initialize Puppetserver - Part 2/2')
 
   # does not work, provider is not excepted in the right way

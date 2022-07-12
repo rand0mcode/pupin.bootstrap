@@ -7,7 +7,7 @@ plan bootstrap::add (
   String $env         = 'production',
   String $type        = 'ext_ca_pdb_oss',
   TargetSpec $targets = [],
-){
+) {
   # make sure puppet is installed
   run_plan('bootstrap::prerequirements', $targets,
     {

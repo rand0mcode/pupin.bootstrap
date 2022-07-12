@@ -1,23 +1,24 @@
 # This plan installs a puppetserver, puppetca and puppetdb
 plan bootstrap::all (
-  Boolean $prerequirements = true,
-  String $collection       = 'puppet7',
-  String $control_repo     = 'https://github.com/rand0mcode/pupin.control.git',
-  String $domain           = 'priv.rw.betadots.training',
-  String $locale           = 'de',
-  String $type             = 'ext_ca_pdb_oss',
-  String $env              = 'production',
-  TargetSpec $targets      = ['puppet', 'puppetdb', 'puppetca'],
-){
+  Boolean $prerequirements  = true,
+  String $collection        = 'puppet7',
+  String $control_repo      = 'https://github.com/rand0mcode/pupin.control.git',
+  String $domain            = 'priv.rw.betadots.training',
+  String $locale            = 'de',
+  Bootstrap::All_type $type = 'ext_ca_pdb_oss',
+  String $env               = 'production',
+  TargetSpec $targets       = ['puppet', 'puppetdb', 'puppetca'],
+) {
   if $prerequirements {
     run_plan('bootstrap::prerequirements', $targets,
-    {
-      collection => $collection,
-      domain     => $domain,
-      env        => $env,
-      locale     => $locale,
-      type       => $type,
-    })
+      {
+        collection => $collection,
+        domain     => $domain,
+        env        => $env,
+        locale     => $locale,
+        type       => $type,
+      }
+    )
   }
 
   case $type {
@@ -32,6 +33,6 @@ plan bootstrap::all (
     'aio_oss': {
       run_plan('bootstrap::puppetserver_aio', 'puppet',   { control_repo => $control_repo })
     }
-    default: { }
+    default: {}
   }
 }

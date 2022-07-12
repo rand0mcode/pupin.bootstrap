@@ -13,22 +13,28 @@ groups:
       - uri: puppetca.pub.rw.betadots.training
         name: puppetca
 
-      ### ELK
-      - uri: kibana.pub.rw.betadots.training
-        name: kibana
+      # ### ELK
+      # - uri: kibana.pub.rw.betadots.training
+      #   name: kibana
 
-      - uri: elastic01.pub.rw.betadots.training
-        name: elastic01
+      # - uri: elastic01.pub.rw.betadots.training
+      #   name: elastic01
 
-      - uri: elastic02.pub.rw.betadots.training
-        name: elastic02
+      # - uri: elastic02.pub.rw.betadots.training
+      #   name: elastic02
 
-      - uri: elastic03.pub.rw.betadots.training
-        name: elastic03
+      # - uri: elastic03.pub.rw.betadots.training
+      #   name: elastic03
 
       ### Metrics
-      - uri: prometheus.pub.rw.betadots.training
-        name: prometheus
+      # - uri: prometheus.pub.rw.betadots.training
+      #   name: prometheus
+
+      # - uri: icinga.pub.rw.betadots.training
+      #   name: icinga
+
+      - uri: oracle.pub.rw.betadots.training
+        name: oracle
 
 config:
   transport: ssh

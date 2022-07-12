@@ -2,7 +2,7 @@
 plan bootstrap::puppetserver_aio (
   String $control_repo,
   TargetSpec $targets,
-){
+) {
   out::message('### initialize aio Puppetserver')
 
   # install puppetserver package
@@ -19,10 +19,10 @@ plan bootstrap::puppetserver_aio (
   run_command('dnf clean all', $targets)
 
   # create csr attributes and set role
-  run_task('bootstrap::create_csr_attributes', $targets, { role => 'puppet::aio'})
+  run_task('bootstrap::create_csr_attributes', $targets, { role => 'puppet::aio' })
 
   # start puppetserver service
-  run_task('service', $targets, { action => 'start', name => 'puppetserver'})
+  run_task('service', $targets, { action => 'start', name => 'puppetserver' })
 
   # configure r10k and control-repo
   run_task('bootstrap::r10k_config', $targets, { control_repo => $control_repo })

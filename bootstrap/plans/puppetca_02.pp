@@ -2,7 +2,7 @@
 plan bootstrap::puppetca_02 (
   String $domain,
   TargetSpec $targets,
-){
+) {
   out::message('### initialize PuppetCA - Part 2/3')
 
   # disable allow-subject-alt-name again
@@ -10,5 +10,5 @@ plan bootstrap::puppetca_02 (
 
   # switch puppet conf to final server settings
   run_task('puppet_conf', $targets, { action => 'set', section => 'agent', setting => 'server', value => "puppet.${domain}" })
-  run_task('service', $targets, { action => 'restart', name => 'puppetserver'})
+  run_task('service', $targets, { action => 'restart', name => 'puppetserver' })
 }
